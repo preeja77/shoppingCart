@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src = "https://res.cloudinary.com/df7enm0go/image/upload/v1694248908/Screenshot_2023-09-09_141129_w8uwfi.png" alt = "logo" style = "width: 30%;"/></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link  text-white" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text-white" href="#">Cart <span id="cartItemCount">0</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Products List -->
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Product 1 -->
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4">
+                <div class="card m-2">
+                    <img class="card-img-top" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/vr-products-headset-img.png" alt="Card image" class="w-100">
+                    <div class="card-body">
+                        <h4 class="card-title">VR Headset</h4>
+                        <p class="card-text">Rs 75,000</p>
+                        <button  class="btn btn-primary" onclick="addToCart('VR Headset', 75000)">Buy Now</button
+                            
+                            >
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4">
+                <div class="card m-2">
+                    <img class="card-img-top" src="https://res.cloudinary.com/df7enm0go/image/upload/v1694233239/austin-poon-JO_S6ewBqAk-unsplash_e4nkaj.jpg" alt="Card image" class="w-100">
+                    <div class="card-body">
+                        <h4 class="card-title">Laptop</h4>
+                        <p class="card-text">Rs 55,000</p>
+                        <button  class="btn btn-primary" onclick="addToCart('Laptop', 55000)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4">
+                <div class="card m-2">
+                    <img class="card-img-top" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/vr-products-headset-with-controllers-img.png" alt="Card image" class="w-70">
+                    <div class="card-body">
+                        <h4 class="card-title">VR Headset and Two Touch Controllers</h4>
+                        <p class="card-text">Rs 90,000</p>
+                        <button class="btn btn-primary" onclick="addToCart('VR Headset and Controllers', 90000)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4">
+                <div class="card m-2">
+                    <img class="card-img-top" src="https://res.cloudinary.com/df7enm0go/image/upload/v1694246477/omid-armin-B2w4rdIihEo-unsplash_txhzwn.jpg" alt="Card image" class="w-70" style = "width: 100%; height: 390px;">
+                    <div class="card-body">
+                        <h4 class="card-title">Mobile Phone</h4>
+                        <p class="card-text">Rs 45,000</p>
+                        <button class="btn btn-primary" onclick="addToCart('Mobile Phone', 45000)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cart -->
+    <div class="container-fluid w-10 mt-5">
+        <h1 class = "text-white text-center bg-dark  p-2">My shopping Cart</h1>
+        <table class="table table-bordered ">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="cartItems">
+                <!-- Cart items -->
+            </tbody>
+            <td></td>
+            <td id = "Quantity"></td>
+            
+            <td class = "fw-bold">
+                Total: 
+            <th id="cartTotal">Rs. 0.00</th>
+            </td>
+        </table>
+        <button class="btn btn-primary" onclick="clearCart()">Clear Cart</button>
+    </div>
+    <script src="addToCart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
